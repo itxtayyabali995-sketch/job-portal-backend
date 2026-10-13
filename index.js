@@ -8,7 +8,7 @@ import companyRoute from "./routes/company.routes.js";
 import jobRoute from "./routes/job.routes.js";
 import applicationRoute from "./routes/application.routes.js";
 
-// Safe environment variables loading
+// Safe environment variables loadingg
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
