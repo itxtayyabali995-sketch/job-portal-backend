@@ -27,6 +27,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
+console.log("Railway PORT:", process.env.PORT);
+console.log("Selected PORT:", PORT);
 
 // apis  
 app.use("/api/v1/user", userRoute);
