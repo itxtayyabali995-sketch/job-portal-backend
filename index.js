@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: true,
+    origin: "https://job-portal-frontend-d59h.vercel.app", // yahan apna exact Vercel wala link dein jo aapki screen par aa raha hai
     credentials: true
 };
 app.use(cors(corsOptions));
