@@ -205,8 +205,6 @@ export const updateJob = async (req, res) => {
         } = req.body;
 
         const jobId = req.params.id;
-
-        // Check company before updating job
         const company = await Company.findById(companyId);
 
         if (!company) {

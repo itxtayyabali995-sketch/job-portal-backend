@@ -13,13 +13,10 @@ import {
 import { singleUpload } from "../middlewares/multer.js";
 
 const router = express.Router();
-
-// Register company
 router
     .route("/register")
     .post(isAuthenticated, registerCompany);
 
-// Get all companies
 router
     .route("/get")
     .get(isAuthenticated, getCompany);

@@ -33,10 +33,8 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
-
-// Database connection pehle call karein taake server start hone se pehle DB connect ho jaye
 connectDB().then(() => {
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
         console.log(`server running on port ${PORT}`);
     });
 }).catch((err) => {

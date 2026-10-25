@@ -8,7 +8,7 @@ export const register = async (req, res) => {
     try {
         const {
             fullname,
-            email,
+            email,  
             phoneNumber,
             password,
             role

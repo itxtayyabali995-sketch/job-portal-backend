@@ -196,13 +196,9 @@ export const deletecompany = async (req, res) => {
                 job: { $in: jobIds }
             });
         }
-
-        // 4. Delete all jobs belonging to this company
         await Job.deleteMany({
             company: companyId
         });
-
-        // 5. Finally delete the company
         await Company.findByIdAndDelete(companyId);
 
         return res.status(200).json({
