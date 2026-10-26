@@ -163,7 +163,8 @@ export const login = async (req, res) => {
             .cookie("token", token, {
                 maxAge: 1 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
-                sameSite: 'strict' 
+                sameSite: 'none', // Cross-domain (Vercel to Railway) ke liye 'none' hona lazmi hai
+                secure: true      // HTTPS par chalne ke liye true hona lazmi hai
             })
             .json({
                 message: `Welcome back ${user.fullname}`,
@@ -187,7 +188,9 @@ export const logout = async (req, res) => {
         return res
             .status(200)
             .cookie("token", "", {
-                maxAge: 0
+                maxAge: 0,
+                sameSite: 'none',
+                secure: true
             })
             .json({
                 message: "Logged out successfully",
